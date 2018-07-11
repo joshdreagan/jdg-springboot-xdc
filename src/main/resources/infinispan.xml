@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<infinispan xmlns="urn:infinispan:config:8.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="urn:infinispan:config:8.0 http://infinispan.org/schemas/infinispan-config-8.0.xsd">
+
+  <jgroups>
+    <stack-file name="cluster" path="jgroups.xml"/>
+  </jgroups>
+  
+  <cache-container default-cache="default">
+    <transport stack="cluster"
+               cluster="cluster" 
+               site="${infinispan.site:site1}" 
+               machine="${infinispan.machine:machine1}" 
+               rack="${infinispan.rack:rack1}" 
+               node-name="${infinispan.node-name:node1}"/>
+    <distributed-cache name="default" mode="SYNC" start="EAGER">
+      <backups>
+        <backup site="site2" strategy="ASYNC"/>
+      </backups>
+    </distributed-cache>
+  </cache-container>
+
+</infinispan>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config xmlns="urn:org:jgroups"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/jgroups-3.6.xsd">
+  <TCP bind_addr="${jgroups.tcp.address:127.0.0.1}"
+       bind_port="${jgroups.tcp.port:7800}"/>
+  <!--
+  <kubernetes.KUBE_PING/>
+  -->
+  <TCPPING initial_hosts="${jgroups.tcpping.initial_hosts:127.0.0.1[7800]}"/>
+  <MERGE3/>
+  <FD_SOCK/>
+  <FD_ALL/>
+  <VERIFY_SUSPECT/>
+  <pbcast.NAKACK2 use_mcast_xmit="false"/>
+  <UNICAST3/>
+  <pbcast.STABLE/>
+  <pbcast.GMS/>
+  <MFC/>
+  <FRAG2/>
+  <relay.RELAY2 site="${jgroups.relay.site:site1}" 
+                config="relay.xml" 
+                relay_multicasts="false"/>
+</config>

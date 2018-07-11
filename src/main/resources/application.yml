@@ -1,0 +1,19 @@
+# Servlet Container & Health Setup
+server:
+  address: 0.0.0.0
+management:
+  address: 0.0.0.0
+  port: 8081
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+    
+# Spring Boot
+spring:
+
+# Logging
+logging:
+  config: classpath:logback.xml
+  level:
+    #org.infinispan: DEBUG

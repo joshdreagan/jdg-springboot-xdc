@@ -1,0 +1,8 @@
+metadata:
+  name: jdg-springboot-xdc-tcpping
+spec:
+  ports:
+  - name: tcpping
+    port: 7800
+    protocol: TCP
+    targetPort: 7800

@@ -1,0 +1,29 @@
+spec:
+  template:
+    spec:
+      serviceAccountName: jdg-springboot-xdc-sa
+      containers:
+      - name: jdg-springboot-xdc
+        env:
+        - name: SPRING_CONFIG_LOCATION
+          value: file:/etc/config/
+        - name: JAVA_OPTIONS
+          configMapKeyRef:
+            name: jdg-springboot-xdc-configmap
+            key: java-options
+        resources:
+          requests:
+            cpu: "1.0"
+          limits:
+            cpu: "4.0"
+        volumeMounts:
+        - name: jdg-springboot-xdc-configmap-vol
+          mountPath: /etc/config
+          readOnly: true
+      volumes:
+      - name: jdg-springboot-xdc-configmap-vol
+        configMap:
+          name: jdg-springboot-xdc-configmap
+          items:
+          - key: application.properties
+            

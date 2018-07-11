@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config xmlns="urn:org:jgroups"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/jgroups-3.6.xsd">
+  <TCP bind_addr="${jgroups-relay.tcp.address:127.0.0.1}"
+       bind_port="${jgroups-relay.tcp.port:7900}"
+       external_addr="${jgroups-relay.tcp.external_addr:127.0.0.1}"/>
+  <TCPPING initial_hosts="${jgroups-relay.tcpping.initial_hosts:127.0.0.1[7900]}"/>
+  <MERGE3/>
+  <FD_SOCK/>
+  <FD_ALL timeout="180000"/>
+  <VERIFY_SUSPECT/>
+  <pbcast.NAKACK2 use_mcast_xmit="false"/>
+  <UNICAST3/>
+  <pbcast.STABLE/>
+  <pbcast.GMS/>
+  <MFC/>
+  <FRAG2/>
+</config>
