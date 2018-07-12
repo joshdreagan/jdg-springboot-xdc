@@ -59,6 +59,10 @@ $ oc secrets add sa/jdg-springboot-xdc-sa secret/jdg-springboot-xdc-secret
 Add the view role to the [ServiceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/):
 
 ```
+$ oc login -u system:admin
+$ oc policy add-role-to-user view system:serviceaccount:demo-jdg:default -n demo-jdg
+$ oc policy add-role-to-user view system:serviceaccount:demo-jdg:jdg-springboot-xdc-sa -n demo-jdg
+$ oc login -u developer
 $ oc policy add-role-to-user view system:serviceaccount:jdg-springboot-xdc:jdg-springboot-xdc-sa
 ```
 
