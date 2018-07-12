@@ -6,3 +6,5 @@ data:
   application.properties: |-
     logging.level.org.infinispan: INFO
     jgroups.config-file: jgroups-kube.xml
+    jgroups.relay2.tcp.external-port: 32767
+    jgroups.relay2.tcpping.initial-hosts: ${JGROUPS_RELAY2_TCP_BIND_ADDRESS}[7900]

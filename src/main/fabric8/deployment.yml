@@ -7,6 +7,26 @@ spec:
         env:
         - name: SPRING_CONFIG_LOCATION
           value: file:/etc/config/
+        - name: INFINISPAN_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: INFINISPAN_MACHINE
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: JGROUPS_TCP_BIND_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: JGROUPS_RELAY2_TCP_BIND_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: JGROUPS_RELAY2_TCP_EXTERNAL_ADDRESS
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
         resources:
           requests:
             cpu: "1.0"

@@ -1,0 +1,8 @@
+metadata:
+  name: jdg-springboot-xdc-http
+spec:
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
