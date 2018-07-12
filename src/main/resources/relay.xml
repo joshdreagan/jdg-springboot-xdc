@@ -3,6 +3,9 @@
   <sites>
     <site name="site1" id="0">
       <bridges>
+        <!-- This file doesn't appear to have property replacement capabilities... :(
+        <bridge config="${jgroups.relay2.jgroups_config_file:jgroups-relay.xml}" name="global"/>
+        -->
         <bridge config="jgroups-relay.xml" name="global"/>
       </bridges>
     </site>

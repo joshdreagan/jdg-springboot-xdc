@@ -4,7 +4,7 @@
             xsi:schemaLocation="urn:infinispan:config:8.0 http://infinispan.org/schemas/infinispan-config-8.0.xsd">
 
   <jgroups>
-    <stack-file name="cluster" path="jgroups.xml"/>
+    <stack-file name="cluster" path="${jgroups.config_file:jgroups.xml}"/>
   </jgroups>
   
   <cache-container default-cache="default">
@@ -13,9 +13,13 @@
                site="${infinispan.site:site1}" 
                machine="${infinispan.machine:machine1}" 
                rack="${infinispan.rack:rack1}" 
-               node-name="${infinispan.node-name:node1}"/>
-    <distributed-cache name="default" mode="SYNC" start="EAGER">
+               node-name="${infinispan.node_name:node1}"/>
+    <distributed-cache name="default" 
+                       mode="SYNC" 
+                       start="EAGER"
+                       owners="${infinispan.num_owners:1}">
       <backups>
+        <backup site="site1" strategy="ASYNC"/>
         <backup site="site2" strategy="ASYNC"/>
       </backups>
     </distributed-cache>

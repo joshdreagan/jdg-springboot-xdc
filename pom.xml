@@ -40,6 +40,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!--
+      <dependency>
+        <groupId>org.jgroups</groupId>
+        <artifactId>jgroups</artifactId>
+        <version>4.0.4.Final</version>
+      </dependency>
+      -->
     </dependencies>
   </dependencyManagement>
 
@@ -56,13 +63,11 @@
       <groupId>org.infinispan</groupId>
       <artifactId>infinispan-embedded</artifactId>
     </dependency>
-    <!--
     <dependency>
       <groupId>org.jgroups.kubernetes</groupId>
       <artifactId>jgroups-kubernetes</artifactId>
-      <version>1.0.6.Final</version>
+      <version>1.0.6.Final-redhat-1</version>
     </dependency>
-    -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>

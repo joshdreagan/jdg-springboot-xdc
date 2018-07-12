@@ -2,10 +2,10 @@
 <config xmlns="urn:org:jgroups"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="urn:org:jgroups http://www.jgroups.org/schema/jgroups-3.6.xsd">
-  <TCP bind_addr="${jgroups-relay.tcp.address:127.0.0.1}"
-       bind_port="${jgroups-relay.tcp.port:7900}"
-       external_addr="${jgroups-relay.tcp.external_addr:127.0.0.1}"/>
-  <TCPPING initial_hosts="${jgroups-relay.tcpping.initial_hosts:127.0.0.1[7900]}"/>
+  <TCP bind_addr="${jgroups.relay2.tcp.bind_addr:127.0.0.1}"
+       bind_port="${jgroups.relay2.tcp.bind_port:7900}"
+       external_addr="${jgroups.relay2.tcp.external_addr:127.0.0.1}"/>
+  <TCPPING initial_hosts="${jgroups.relay2.tcpping.initial_hosts:127.0.0.1[7900]}"/>
   <MERGE3/>
   <FD_SOCK/>
   <FD_ALL timeout="180000"/>

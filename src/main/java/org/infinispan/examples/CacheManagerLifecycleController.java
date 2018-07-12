@@ -30,7 +30,7 @@ public class CacheManagerLifecycleController {
   @PostConstruct
   void startCacheManager() {
     cacheManager.start();
-    //cacheManager.getCache("default", true);
+    cacheManager.getCache("default", true);
   }
   
   @PreDestroy

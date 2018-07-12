@@ -17,3 +17,35 @@ logging:
   config: classpath:logback.xml
   level:
     #org.infinispan: DEBUG
+
+# Infinispan
+infinispan:
+  config-file: infinispan.xml
+  site: site1
+  machine: machine1
+  rack: rack1
+  node-name: node1
+  num-owners: 1
+
+# JGroups
+jgroups:
+  config-file: jgroups.xml
+  tcp:
+    bindAddress: 127.0.0.1
+    bindPort: 7800
+    #externalAddress: 192.168.99.1
+    #externalPort: 7800
+  tcpping:
+    initial-hosts: 127.0.0.1[7800]
+  relay2:
+    config-file: relay.xml
+    jgroups-config-file: jgroups-relay.xml
+    tcp:
+      bindAddress: 127.0.0.1
+      bindPort: 7900
+      externalAddress: 192.168.99.1
+      externalPort: 7900
+    tcpping:
+      initial-hosts: 127.0.0.1[7900]
+    
+    

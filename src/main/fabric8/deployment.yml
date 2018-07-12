@@ -7,10 +7,6 @@ spec:
         env:
         - name: SPRING_CONFIG_LOCATION
           value: file:/etc/config/
-        - name: JAVA_OPTIONS
-          configMapKeyRef:
-            name: jdg-springboot-xdc-configmap
-            key: java-options
         resources:
           requests:
             cpu: "1.0"
@@ -24,6 +20,4 @@ spec:
       - name: jdg-springboot-xdc-configmap-vol
         configMap:
           name: jdg-springboot-xdc-configmap
-          items:
-          - key: application.properties
             

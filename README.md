@@ -25,12 +25,11 @@ $ mvn spring-boot:run
 It is assumed that:
 
 - OpenShift platform is already running, if not you can find details how to [Install OpenShift at your site](https://docs.openshift.com/container-platform/3.9/install_config/index.html).
-- Your system is configured for Fabric8 Maven Workflow, if not you can find details in the [Getting Started Guide](https://access.redhat.com/documentation/en-us/red_hat_fuse/7.0/html/fuse_on_openshift_guide/)
 
 Create a new project:
 
 ```
-$ oc new-project demo-fuse
+$ oc new-project demo-jdg
 ```
 
 Create the [ServiceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/):
@@ -54,13 +53,13 @@ $ oc create -f src/main/kube/secret.yml
 Add the [Secret](https://kubernetes.io/docs/concepts/configuration/secret/) to the [ServiceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) created earlier:
 
 ```
-$ oc secrets add sa/camel-request-reply-worker-sa secret/camel-request-reply-worker-secret
+$ oc secrets add sa/jdg-springboot-xdc-sa secret/jdg-springboot-xdc-secret
 ```
 
 Add the view role to the [ServiceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/):
 
 ```
-$ oc policy add-role-to-user view system:serviceaccount:camel-request-reply-worker:camel-request-reply-worker-sa
+$ oc policy add-role-to-user view system:serviceaccount:jdg-springboot-xdc:jdg-springboot-xdc-sa
 ```
 
 The example can be built and run on OpenShift using the following goals:
